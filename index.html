@@ -19,7 +19,7 @@
             margin: 0;
         }
         </style>
-        <title>Carte des différents commerces ouverts pendant le Covid-19 \n(liste non exhaustive, mise à jour régulièrement)</title>
+        <title></title>
     </head>
     <body>
         <div id="map">
@@ -94,13 +94,16 @@
                         <td colspan="2">' + (feature.properties['commune'] !== null ? Autolinker.link(String(feature.properties['commune'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['qui'] !== null ? Autolinker.link(String(feature.properties['qui'])) : '') + '</td>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['qui'] !== null ? Autolinker.link(String(feature.properties['qui'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['quoi'] !== null ? Autolinker.link(String(feature.properties['quoi'])) : '') + '</td>\
+                        <th scope="row">Type</th>\
+                        <td>' + (feature.properties['quoi'] !== null ? Autolinker.link(String(feature.properties['quoi'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['catégorie'] !== null ? Autolinker.link(String(feature.properties['catégorie'])) : '') + '</td>\
+                        <th scope="row">Catégorie</th>\
+                        <td>' + (feature.properties['catégorie'] !== null ? Autolinker.link(String(feature.properties['catégorie'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Observations</th>\
@@ -118,6 +121,9 @@
                         <th scope="row">Email</th>\
                         <td>' + (feature.properties['mail'] !== null ? Autolinker.link(String(feature.properties['mail'])) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
@@ -127,23 +133,22 @@
                 case 'Transport':
                     return {
                 pane: 'pane_MAJ20200406_1',
-                radius: 7.0,
+                radius: 6.0,
                 opacity: 1,
-                color: 'rgba(161,32,163,1.0)',
+                color: 'rgba(76,25,102,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1,
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(160,42,156,1.0)',
+                fillColor: 'rgba(132,35,156,1.0)',
             }
                     break;
                 case 'Santé':
                     return {
                 pane: 'pane_MAJ20200406_1',
-                shape: 'diamond',
-                radius: 7.0,
+                radius: 6.0,
                 opacity: 1,
                 color: 'rgba(61,128,53,1.0)',
                 dashArray: '',
@@ -158,17 +163,16 @@
                 case 'Commerces de services':
                     return {
                 pane: 'pane_MAJ20200406_1',
-                shape: 'triangle',
-                radius: 7.0,
+                radius: 6.0,
                 opacity: 1,
-                color: 'rgba(31,120,180,1.0)',
+                color: 'rgba(50,87,128,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1,
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(31,120,180,1.0)',
+                fillColor: 'rgba(72,123,182,1.0)',
             }
                     break;
                 case 'Commerce de détail':
@@ -176,14 +180,14 @@
                 pane: 'pane_MAJ20200406_1',
                 radius: 6.0,
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(219,113,14,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1,
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(237,106,13,1.0)',
+                fillColor: 'rgba(255,127,0,1.0)',
             }
                     break;
             }
@@ -205,16 +209,6 @@
         });
         bounds_group.addLayer(layer_MAJ20200406_1);
         map.addLayer(layer_MAJ20200406_1);
-        var title = new L.Control();
-        title.onAdd = function (map) {
-            this._div = L.DomUtil.create('div', 'info');
-            this.update();
-            return this._div;
-        };
-        title.update = function () {
-            this._div.innerHTML = '<h2>Carte des différents commerces ouverts pendant le Covid-19 \n(liste non exhaustive, mise à jour régulièrement)</h2>';
-        };
-        title.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
