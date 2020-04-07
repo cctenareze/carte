@@ -55,7 +55,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[43.95054341624838,0.3503031678600568],[43.964605140761144,0.3843771408298612]]);
+        }).fitBounds([[43.79739232881609,0.04771039034808421],[44.022596756244575,0.5926049073147005]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
@@ -122,8 +122,7 @@
                         <td>' + (feature.properties['mail'] !== null ? Autolinker.link(String(feature.properties['mail'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
