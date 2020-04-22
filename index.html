@@ -6,122 +6,12 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="./resources/ol.css">
-        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-        <link rel="stylesheet" href="./resources/ol3-layerswitcher.css">
-        <link rel="stylesheet" href="./resources/qgis2web.css">
-        <style>
-        .ol-geocoder.gcd-gl-container {
-            top: 135px!important;
-            left: .5em!important;
-            width: 2.1em!important;
-            height: 2.1em!important;
-        }
-        .ol-geocoder .gcd-gl-container{
-            width: 2.1em!important;
-            height: 2.1em!important;
-        }
-        .ol-geocoder .gcd-gl-control{
-            width: 2.1em!important;
-        }
-        .ol-geocoder .gcd-gl-expanded {
-            width: 15.625em!important;
-            height: 2.1875em;
-        }
-        .ol-touch .ol-geocoder.gcd-gl-container{
-            top: 180px!important;
-        }
-        .ol-geocoder .gcd-gl-btn {
-            width: 1.375em!important;
-            height: 1.375em!important;
-            top: .225em!important;
-            background-image: none!important;
-        }
-        </style>
-<style>
-.search-layer {
-  top: 170px;
-  left: .5em;
-}
-.ol-touch .search-layer {
-  top: 230px;
-}
-</style>
-        <style>
-        html, body {
-            background-color: #ffffff;
-        }
-        .ol-control button {
-            background-color: #f8f8f8 !important;
-            color: #000000 !important;
-            border-radius: 0px !important;
-        }
-        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
-            background-color: rgba(255,255,255,.4) !important;
-            padding: 3px !important;
-        }
-        .ol-scale-line {
-            background: none !important;
-        }
-        .ol-scale-line-inner {
-            border: 2px solid #f8f8f8 !important;
-            border-top: none !important;
-            background: rgba(255, 255, 255, 0.5) !important;
-            color: black !important;
-        }
-        </style>
-
-        <style>
-        .geolocate {
-            top: 65px;
-            left: .5em;
-        }
-        .ol-touch .geolocate {
-            top: 80px;
-        }
-        </style>
-        <link href="resources/ol3-geocoder.min.css" rel="stylesheet">
-<style>
-.tooltip {
-  position: relative;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  color: white;
-  padding: 4px 8px;
-  opacity: 0.7;
-  white-space: nowrap;
-}
-.tooltip-measure {
-  opacity: 1;
-  font-weight: bold;
-}
-.tooltip-static {
-  background-color: #ffcc33;
-  color: black;
-  border: 1px solid white;
-}
-.tooltip-measure:before,
-.tooltip-static:before {
-  border-top: 6px solid rgba(0, 0, 0, 0.5);
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  margin-left: -7px;
-  left: 50%;
-}
-.tooltip-static:before {
-  border-top-color: #ffcc33;
-}
-.measure-control {
-  top: 100px;
-  left: .5em;
-}
-.ol-touch .measure-control {
-  top: 130px;
-}
-</style>
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/MarkerCluster.css">
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -134,21 +24,449 @@
     </head>
     <body>
         <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
-            </div>
         </div>
-        <script src="resources/qgis2web_expressions.js"></script>
-        <script src="resources/polyfills.js"></script>
-        <script src="./resources/functions.js"></script>
-        <script src="./resources/ol.js"></script>
-        <script src="./resources/ol3-layerswitcher.js"></script>
-        <script src="resources/ol3-geocoder.js"></script>
-        <script src="layers/Transport_1.js"></script><script src="layers/Sant_2.js"></script><script src="layers/Commercesdeservices_3.js"></script><script src="layers/Commercededtail_4.js"></script>
-        <script src="styles/Transport_1_style.js"></script><script src="styles/Sant_2_style.js"></script><script src="styles/Commercesdeservices_3_style.js"></script><script src="styles/Commercededtail_4_style.js"></script>
-        <script src="./layers/layers.js" type="text/javascript"></script> 
-        <script src="./resources/qgis2web.js"></script>
-        <script src="./resources/Autolinker.min.js"></script>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="js/leaflet.markercluster.js"></script>
+        <script src="data/Catgorie4_1.js"></script>
+        <script src="data/Catgorie3_2.js"></script>
+        <script src="data/Catgorie2_3.js"></script>
+        <script src="data/Catgorie1_4.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[43.797045589309235,0.06236742331185958],[44.022979793649135,0.6091554544188668]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+        });
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_Catgorie4_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code posta'] !== null ? Autolinker.link(String(feature.properties['code posta'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Commune</th>\
+                        <td>' + (feature.properties['commune'] !== null ? Autolinker.link(String(feature.properties['commune'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['qui'] !== null ? Autolinker.link(String(feature.properties['qui'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type</th>\
+                        <td>' + (feature.properties['quoi'] !== null ? Autolinker.link(String(feature.properties['quoi'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Catégorie</th>\
+                        <td>' + (feature.properties['catégorie'] !== null ? Autolinker.link(String(feature.properties['catégorie'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Observations</th>\
+                        <td>' + (feature.properties['obs'] !== null ? Autolinker.link(String(feature.properties['obs'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Adresse</th>\
+                        <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Téléphone</th>\
+                        <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Email</th>\
+                        <td>' + (feature.properties['mail'] !== null ? Autolinker.link(String(feature.properties['mail'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Site</th>\
+                        <td>' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Catgorie4_1_0(feature) {
+            switch(String(feature.properties['catégorie'])) {
+                case 'Transport':
+                    return {
+                pane: 'pane_Catgorie4_1',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(76,25,102,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(132,35,156,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Catgorie4_1');
+        map.getPane('pane_Catgorie4_1').style.zIndex = 401;
+        map.getPane('pane_Catgorie4_1').style['mix-blend-mode'] = 'normal';
+        var layer_Catgorie4_1 = new L.geoJson(json_Catgorie4_1, {
+            attribution: '',
+            pane: 'pane_Catgorie4_1',
+            onEachFeature: pop_Catgorie4_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Catgorie4_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Catgorie4_1);
+        map.addLayer(layer_Catgorie4_1);
+        function pop_Catgorie3_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code posta'] !== null ? Autolinker.link(String(feature.properties['code posta'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Commune</th>\
+                        <td>' + (feature.properties['commune'] !== null ? Autolinker.link(String(feature.properties['commune'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['qui'] !== null ? Autolinker.link(String(feature.properties['qui'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type</th>\
+                        <td>' + (feature.properties['quoi'] !== null ? Autolinker.link(String(feature.properties['quoi'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Catégorie</th>\
+                        <td>' + (feature.properties['catégorie'] !== null ? Autolinker.link(String(feature.properties['catégorie'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Observations</th>\
+                        <td>' + (feature.properties['obs'] !== null ? Autolinker.link(String(feature.properties['obs'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Adresse</th>\
+                        <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Téléphone</th>\
+                        <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Email</th>\
+                        <td>' + (feature.properties['mail'] !== null ? Autolinker.link(String(feature.properties['mail'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Site</th>\
+                        <td>' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Catgorie3_2_0(feature) {
+            switch(String(feature.properties['catégorie'])) {
+                case 'Santé':
+                    return {
+                pane: 'pane_Catgorie3_2',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(84,176,74,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Catgorie3_2');
+        map.getPane('pane_Catgorie3_2').style.zIndex = 402;
+        map.getPane('pane_Catgorie3_2').style['mix-blend-mode'] = 'normal';
+        var layer_Catgorie3_2 = new L.geoJson(json_Catgorie3_2, {
+            attribution: '',
+            pane: 'pane_Catgorie3_2',
+            onEachFeature: pop_Catgorie3_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Catgorie3_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Catgorie3_2);
+        map.addLayer(layer_Catgorie3_2);
+        function pop_Catgorie2_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code posta'] !== null ? Autolinker.link(String(feature.properties['code posta'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Commune</th>\
+                        <td>' + (feature.properties['commune'] !== null ? Autolinker.link(String(feature.properties['commune'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['qui'] !== null ? Autolinker.link(String(feature.properties['qui'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type</th>\
+                        <td>' + (feature.properties['quoi'] !== null ? Autolinker.link(String(feature.properties['quoi'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Catégorie</th>\
+                        <td>' + (feature.properties['catégorie'] !== null ? Autolinker.link(String(feature.properties['catégorie'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Observations</th>\
+                        <td>' + (feature.properties['obs'] !== null ? Autolinker.link(String(feature.properties['obs'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Adresse</th>\
+                        <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Téléphone</th>\
+                        <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Email</th>\
+                        <td>' + (feature.properties['mail'] !== null ? Autolinker.link(String(feature.properties['mail'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Site</th>\
+                        <td>' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Catgorie2_3_0(feature) {
+            switch(String(feature.properties['catégorie'])) {
+                case 'Commerces de services':
+                    return {
+                pane: 'pane_Catgorie2_3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,123,182,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Catgorie2_3');
+        map.getPane('pane_Catgorie2_3').style.zIndex = 403;
+        map.getPane('pane_Catgorie2_3').style['mix-blend-mode'] = 'normal';
+        var layer_Catgorie2_3 = new L.geoJson(json_Catgorie2_3, {
+            attribution: '',
+            pane: 'pane_Catgorie2_3',
+            onEachFeature: pop_Catgorie2_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Catgorie2_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Catgorie2_3);
+        map.addLayer(layer_Catgorie2_3);
+        function pop_Catgorie1_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code posta'] !== null ? Autolinker.link(String(feature.properties['code posta'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Commune</th>\
+                        <td>' + (feature.properties['commune'] !== null ? Autolinker.link(String(feature.properties['commune'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['qui'] !== null ? Autolinker.link(String(feature.properties['qui'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type</th>\
+                        <td>' + (feature.properties['quoi'] !== null ? Autolinker.link(String(feature.properties['quoi'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Catégorie</th>\
+                        <td>' + (feature.properties['catégorie'] !== null ? Autolinker.link(String(feature.properties['catégorie'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Observations</th>\
+                        <td>' + (feature.properties['obs'] !== null ? Autolinker.link(String(feature.properties['obs'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Adresse</th>\
+                        <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Téléphone</th>\
+                        <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Email</th>\
+                        <td>' + (feature.properties['mail'] !== null ? Autolinker.link(String(feature.properties['mail'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Site</th>\
+                        <td>' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Catgorie1_4_0(feature) {
+            switch(String(feature.properties['catégorie'])) {
+                case 'Commerce de détail':
+                    return {
+                pane: 'pane_Catgorie1_4',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(219,113,14,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,127,0,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Catgorie1_4');
+        map.getPane('pane_Catgorie1_4').style.zIndex = 404;
+        map.getPane('pane_Catgorie1_4').style['mix-blend-mode'] = 'normal';
+        var layer_Catgorie1_4 = new L.geoJson(json_Catgorie1_4, {
+            attribution: '',
+            pane: 'pane_Catgorie1_4',
+            onEachFeature: pop_Catgorie1_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Catgorie1_4_0(feature));
+            },
+        });
+        var cluster_Catgorie1_4 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2});
+        cluster_Catgorie1_4.addLayer(layer_Catgorie1_4);
+
+        bounds_group.addLayer(layer_Catgorie1_4);
+        cluster_Catgorie1_4.addTo(map);
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topleft',
+            text: 'Search',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Search for a place';
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'Catégorie 1<br /><table><tr><td style="text-align: center;"><img src="legend/Catgorie1_4_Commercededétail0.png" /></td><td>Commerce de détail</td></tr></table>': cluster_Catgorie1_4,'Catégorie 2<br /><table><tr><td style="text-align: center;"><img src="legend/Catgorie2_3_Commercesdeservices0.png" /></td><td>Commerces de services</td></tr></table>': layer_Catgorie2_3,'Catégorie 3<br /><table><tr><td style="text-align: center;"><img src="legend/Catgorie3_2_Santé0.png" /></td><td>Santé</td></tr></table>': layer_Catgorie3_2,'Catégorie 4<br /><table><tr><td style="text-align: center;"><img src="legend/Catgorie4_1_Transport0.png" /></td><td>Transport</td></tr></table>': layer_Catgorie4_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        resetLabels([layer_Catégorie4_1,layer_Catégorie3_2,layer_Catégorie2_3,layer_Catégorie1_4]);
+        map.on("zoomend", function(){
+            resetLabels([layer_Catégorie4_1,layer_Catégorie3_2,layer_Catégorie2_3,layer_Catégorie1_4]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_Catégorie4_1,layer_Catégorie3_2,layer_Catégorie2_3,layer_Catégorie1_4]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_Catégorie4_1,layer_Catégorie3_2,layer_Catégorie2_3,layer_Catégorie1_4]);
+        });
+        </script>
     </body>
 </html>
