@@ -1,6 +1,6 @@
-var json__3 = {
+var json_Commercesdeservices_3 = {
 "type": "FeatureCollection",
-"name": "_3",
+"name": "Commercesdeservices_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "code posta": "32100", "commune": "CONDOM", "qui": "CREDIT MUTUEL", "quoi": null, "catégorie": "Commerces de services", "obs": "Pour joindre votre Caisse le 05 62 28 71 58 ou 02366 et sur creditmutuel.fr \/ Pour le Service Bancassurance en ligne (lundi-Samedi de 8h à 20h) au 09 69 39 19 91 \/ Pour les oppositions au 03 88 40 10 00 \/ Pour les déclarations de sinistres Automobile au", "adresse": "Place du Souvenir", "numéro": "05 62 28 71 58", "mail": "02366@ creditmutuel.fr", "Site": null }, "geometry": { "type": "Point", "coordinates": [ 0.375991653908245, 43.956615069319277 ] } },

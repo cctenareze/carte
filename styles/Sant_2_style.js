@@ -1,19 +1,19 @@
 var size = 0;
 var placement = 'point';
-function categories__3(feature, value, size, resolution, labelText,
+function categories_Sant_2(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement) {
-                switch(value.toString()) {case 'Commerces de services':
+                switch(value.toString()) {case 'Santé':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 6.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(50,87,128,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1}), fill: new ol.style.Fill({color: 'rgba(72,123,182,1.0)'})}),
+            stroke: new ol.style.Stroke({color: 'rgba(61,128,53,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1}), fill: new ol.style.Fill({color: 'rgba(84,176,74,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
                     break;}};
 
-var style__3 = function(feature, resolution){
+var style_Sant_2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -33,7 +33,7 @@ var style__3 = function(feature, resolution){
         labelText = String("");
     }
     
-var style = categories__3(feature, value, size, resolution, labelText,
+var style = categories_Sant_2(feature, value, size, resolution, labelText,
                           labelFont, labelFill, bufferColor,
                           bufferWidth, placement);
 

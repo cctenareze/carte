@@ -1,6 +1,6 @@
-var json__2 = {
+var json_Sant_2 = {
 "type": "FeatureCollection",
-"name": "_2",
+"name": "Sant_2",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "code posta": "32100", "commune": "CONDOM", "qui": "PHARMACIE DE LA BOUQUERIE", "quoi": null, "catégorie": "Santé", "obs": "Pas de changement : lundi 9h-12h30\/14h-19h30; mardi-vendredi. 8h30-12h30\/14h-19h30; samedi 8h30-12h30\/14h-18h. Ouverture en alternance le samedi après-midi pour qu'il y est toujours une ouverture sur Condom même le lundi. Pour les gardes de nuit et diman", "adresse": "2 Rue Roque", "numéro": "05 62 28 01 86", "mail": "pharma.bouquerie@gmail.com", "Site": null }, "geometry": { "type": "Point", "coordinates": [ 0.369252, 43.95684 ] } },

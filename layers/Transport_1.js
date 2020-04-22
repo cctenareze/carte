@@ -1,6 +1,6 @@
-var json__1 = {
+var json_Transport_1 = {
 "type": "FeatureCollection",
-"name": "_1",
+"name": "Transport_1",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "code posta": "32100", "commune": "CONDOM", "qui": "TENAREZE AMBULANCES", "quoi": null, "catégorie": "Transport", "obs": "Propose un service gratuit tous les jours : récupérer les médicaments à la pharmacie et les courses commandées pour les personnes seules et affaiblies", "adresse": "Rue des arènes", "numéro": "09 70 35 14 69", "mail": null, "Site": "https:\/\/www.tenareze-taxi-ambulance.com\/\n" }, "geometry": { "type": "Point", "coordinates": [ 0.364544818698439, 43.956033979933387 ] } },

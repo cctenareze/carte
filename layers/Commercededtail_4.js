@@ -1,6 +1,6 @@
-var json__4 = {
+var json_Commercededtail_4 = {
 "type": "FeatureCollection",
-"name": "_4",
+"name": "Commercededtail_4",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "code posta": "32100", "commune": "CONDOM", "qui": "LES GOURMANDISES DE LA GATISE", "quoi": "Boulangerie Patisserie", "catégorie": "Commerce de détail", "obs": "Ouvert du lundi au samedi de 6h30 à 15h (fermé le jeudi), dimanche 06h30 à 13h", "adresse": "2 Rue de la Gatise", "numéro": "05 62 29 48 16", "mail": "chambrier.boulangerie@sfr.fr", "Site": "http:\/\/www.lesgourmandisesdelagatise.fr\/\n" }, "geometry": { "type": "Point", "coordinates": [ 0.366234, 43.95787 ] } },
