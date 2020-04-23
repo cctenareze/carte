@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_Transport_1 = function(feature, resolution){
+var style_Commercesdedtail_4 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -22,7 +22,7 @@ var style_Transport_1 = function(feature, resolution){
     }
     var style = [ new ol.style.Style({
         image: new ol.style.Circle({radius: 6.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(76,25,102,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1}), fill: new ol.style.Fill({color: 'rgba(132,35,156,1.0)'})}),
+            stroke: new ol.style.Stroke({color: 'rgba(219,113,14,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1}), fill: new ol.style.Fill({color: 'rgba(255,127,0,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
