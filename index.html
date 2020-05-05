@@ -37,7 +37,7 @@
         <script src="data/Transport_1.js"></script>
         <script src="data/Commercesdeservices_2.js"></script>
         <script src="data/Sant_3.js"></script>
-        <script src="data/Commercesdedtail_4.js"></script>
+        <script src="data/Commercesquotidiens_4.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -119,7 +119,7 @@
                         <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Téléphone</th>\
+                        <th scope="row">Tél.</th>\
                         <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -204,7 +204,7 @@
                         <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Téléphone</th>\
+                        <th scope="row">Tél.</th>\
                         <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -289,7 +289,7 @@
                         <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Téléphone</th>\
+                        <th scope="row">Tél.</th>\
                         <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -336,7 +336,7 @@
         });
         bounds_group.addLayer(layer_Sant_3);
         map.addLayer(layer_Sant_3);
-        function pop_Commercesdedtail_4(feature, layer) {
+        function pop_Commercesquotidiens_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -350,11 +350,11 @@
                         <td colspan="2">' + (feature.properties['code posta'] !== null ? Autolinker.link(String(feature.properties['code posta'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Commune</th>\
+                        <th scope="row"> Commune</th>\
                         <td>' + (feature.properties['commune'] !== null ? Autolinker.link(String(feature.properties['commune'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Nom</th>\
+                        <th scope="row"> Nom</th>\
                         <td>' + (feature.properties['qui'] !== null ? Autolinker.link(String(feature.properties['qui'])) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -362,36 +362,36 @@
                         <td>' + (feature.properties['quoi'] !== null ? Autolinker.link(String(feature.properties['quoi'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Catégorie</th>\
+                        <th scope="row"> Catégorie</th>\
                         <td>' + (feature.properties['catégorie'] !== null ? Autolinker.link(String(feature.properties['catégorie'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Observations</th>\
+                        <th scope="row"> Observations</th>\
                         <td>' + (feature.properties['obs'] !== null ? Autolinker.link(String(feature.properties['obs'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
+                        <th scope="row"> Adresse</th>\
                         <td>' + (feature.properties['adresse'] !== null ? Autolinker.link(String(feature.properties['adresse'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Téléphone</th>\
+                        <th scope="row"> Tél.</th>\
                         <td>' + (feature.properties['numéro'] !== null ? Autolinker.link(String(feature.properties['numéro'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Email</th>\
+                        <th scope="row"> Email</th>\
                         <td>' + (feature.properties['mail'] !== null ? Autolinker.link(String(feature.properties['mail'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
+                        <th scope="row"> Site</th>\
                         <td>' + (feature.properties['Site'] !== null ? Autolinker.link(String(feature.properties['Site'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Commercesdedtail_4_0() {
+        function style_Commercesquotidiens_4_0() {
             return {
-                pane: 'pane_Commercesdedtail_4',
+                pane: 'pane_Commercesquotidiens_4',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(219,113,14,1.0)',
@@ -404,23 +404,23 @@
                 fillColor: 'rgba(255,127,0,1.0)',
             }
         }
-        map.createPane('pane_Commercesdedtail_4');
-        map.getPane('pane_Commercesdedtail_4').style.zIndex = 404;
-        map.getPane('pane_Commercesdedtail_4').style['mix-blend-mode'] = 'normal';
-        var layer_Commercesdedtail_4 = new L.geoJson(json_Commercesdedtail_4, {
+        map.createPane('pane_Commercesquotidiens_4');
+        map.getPane('pane_Commercesquotidiens_4').style.zIndex = 404;
+        map.getPane('pane_Commercesquotidiens_4').style['mix-blend-mode'] = 'normal';
+        var layer_Commercesquotidiens_4 = new L.geoJson(json_Commercesquotidiens_4, {
             attribution: '',
-            pane: 'pane_Commercesdedtail_4',
-            onEachFeature: pop_Commercesdedtail_4,
+            pane: 'pane_Commercesquotidiens_4',
+            onEachFeature: pop_Commercesquotidiens_4,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Commercesdedtail_4_0(feature));
+                return L.circleMarker(latlng, style_Commercesquotidiens_4_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Commercesdedtail_4);
-        map.addLayer(layer_Commercesdedtail_4);
+        bounds_group.addLayer(layer_Commercesquotidiens_4);
+        map.addLayer(layer_Commercesquotidiens_4);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -432,17 +432,17 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Commercesdedtail_4.png" /> Commerces de détail': layer_Commercesdedtail_4,'<img src="legend/Sant_3.png" /> Santé': layer_Sant_3,'<img src="legend/Commercesdeservices_2.png" /> Commerces de services': layer_Commercesdeservices_2,'<img src="legend/Transport_1.png" /> Transport': layer_Transport_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Commercesquotidiens_4.png" /> Commerces quotidiens': layer_Commercesquotidiens_4,'<img src="legend/Sant_3.png" /> Santé': layer_Sant_3,'<img src="legend/Commercesdeservices_2.png" /> Commerces de services': layer_Commercesdeservices_2,'<img src="legend/Transport_1.png" /> Transport': layer_Transport_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
         setBounds();
-        resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesdedétail_4]);
+        resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesquotidiens_4]);
         map.on("zoomend", function(){
-            resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesdedétail_4]);
+            resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesquotidiens_4]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesdedétail_4]);
+            resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesquotidiens_4]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesdedétail_4]);
+            resetLabels([layer_Transport_1,layer_Commercesdeservices_2,layer_Santé_3,layer_Commercesquotidiens_4]);
         });
         </script>
     </body>
